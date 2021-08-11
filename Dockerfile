@@ -49,6 +49,8 @@ RUN useradd -m ${INTRA} --uid=${UID} && echo "${INTRA}:${PW}" | \
 USER ${UID}:${GID}
 WORKDIR /home/${INTRA}
 
+RUN mkdir {$HOME}/42git
+COPY 42git {$HOME}/42git
 #	Setup 42header - WIP
 # COPY stdheader.vim ${HOME}/.vim/pack/vendor/start/stdheader.vim
 # RUN mkdir ${HOME}/bin

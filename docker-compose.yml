@@ -3,5 +3,7 @@ services:
     42docker:
         container_name: "42docker"
         image: livingsavage/42docker:3.0
+        volumes: 
+            - ./42git:/home/default/42git
         stdin_open: true
         tty: true
