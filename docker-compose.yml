@@ -1,9 +1,12 @@
 version: '3'
 services:
     42docker:
+        # image: livingsavage/42docker:latest
         container_name: "42docker"
-        image: livingsavage/42docker:3.0
+        build: .
+        environment: 
+            INTRA: "nervin"
         volumes: 
-            - ./42git:/home/default/42git
+            - ./42git:/home/nervin/42git
         stdin_open: true
         tty: true

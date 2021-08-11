@@ -32,7 +32,7 @@ RUN python3 -m pip install norminette
 ##	-	Set UserID and GroupID													##
 ##################################################################################
 #	If environment variables have been set they will be substituted here.
-ARG INTRA=default
+ENV INTRA=default
 ENV INTRA=${INTRA}
 ENV PW=default
 
@@ -49,8 +49,9 @@ RUN useradd -m ${INTRA} --uid=${UID} && echo "${INTRA}:${PW}" | \
 USER ${UID}:${GID}
 WORKDIR /home/${INTRA}
 
-RUN mkdir {$HOME}/42git
+RUN mkdir 42git
 COPY 42git {$HOME}/42git
+
 #	Setup 42header - WIP
 # COPY stdheader.vim ${HOME}/.vim/pack/vendor/start/stdheader.vim
 # RUN mkdir ${HOME}/bin
