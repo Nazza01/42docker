@@ -32,9 +32,8 @@ RUN python3 -m pip install norminette
 ##	-	Set UserID and GroupID													##
 ##################################################################################
 #	If environment variables have been set they will be substituted here.
-ARG INTRA=default
 ENV INTRA=${INTRA}
-ENV PW=default
+ENV PW=42docker
 
 ARG UID=1000
 ARG GID=1000
