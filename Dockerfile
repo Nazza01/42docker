@@ -32,17 +32,11 @@ RUN python3 -m pip install norminette
 ##	-	Set UserID and GroupID													##
 ##################################################################################
 #	If environment variables have been set they will be substituted here.
-<<<<<<< HEAD
-=======
-ENV INTRA=default
->>>>>>> 753cf8836f7525fc20d4bdff5bbf233f99c1e98a
 ENV INTRA=${INTRA}
 ENV PW=42docker
 
 ARG UID=1000
 ARG GID=1000
-
-RUN export INTRA=${INTRA}
 
 #	Change password of the assigned user and password to the assigned UID
 RUN useradd -m ${INTRA} --uid=${UID} && echo "${INTRA}:${PW}" | \
