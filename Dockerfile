@@ -32,6 +32,10 @@ RUN python3 -m pip install norminette
 ##	-	Set UserID and GroupID													##
 ##################################################################################
 #	If environment variables have been set they will be substituted here.
+<<<<<<< HEAD
+=======
+ENV INTRA=default
+>>>>>>> 753cf8836f7525fc20d4bdff5bbf233f99c1e98a
 ENV INTRA=${INTRA}
 ENV PW=42docker
 
@@ -48,8 +52,9 @@ RUN useradd -m ${INTRA} --uid=${UID} && echo "${INTRA}:${PW}" | \
 USER ${UID}:${GID}
 WORKDIR /home/${INTRA}
 
-RUN mkdir {$HOME}/42git
+RUN mkdir 42git
 COPY 42git {$HOME}/42git
+
 #	Setup 42header - WIP
 # COPY stdheader.vim ${HOME}/.vim/pack/vendor/start/stdheader.vim
 # RUN mkdir ${HOME}/bin
